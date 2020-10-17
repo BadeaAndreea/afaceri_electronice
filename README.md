@@ -18,7 +18,7 @@ git clone https://github.com/BadeaAndreea/afaceri_electronice.git
 ```
 
 ```bash
-cd bdsa-product-catalog
+cd afaceri_electronice
 ```
 
 ```bash
