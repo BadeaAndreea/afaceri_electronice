@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Sejururi</title>
+    
+    <!-- Jquery JS file -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <!-- Bootstrap CSS File  -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    
+    <!-- Bootstrap JS file -->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    
+    <!-- Custom JS file -->
+    <script type="text/javascript" src="js/serialize.js"></script>
+    <script type="text/javascript" src="js/sejururi.js"></script>
+</head>
+<body>
+
+<!-- Content Section -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Admin</h1>
+        </div>
+    </div>
+    <ul class="nav nav-tabs">
+      <li role="presentation"  class="active"><a href="/admin/">Sejururi</a></li>
+      <li role="presentation" ><a href="vouchere.html">Vouchere</a></li>
+    </ul>
+    <br/>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="pull-right">
+                <button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal" onclick="addRecord()">Adauga</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="records_content">
+                <br/>
+                <h3>Sejururi</h3>
+                <table id="articles" class="table table-bordered table-striped">
+						<tr>
+						    <th>Id</th>
+							<th>Titlu</th>
+							<th>Destinatie</th>
+							<th>Durata (zile)</th>
+							<th>Pret (euro)</th>
+							<th colspan="2" style="text-align:center">Operatii</th>
+						</tr>
+            		</tr>
+				</table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Content Section -->
+
+
+<!-- Bootstrap Modals -->
+<!-- Modal - Add New Article -->
+<div class="modal fade" id="add_new_record_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Adauga sejur</h4>
+            </div>
+            <div class="modal-body">
+                <form id="record_form">
+                     <div class="form-group">
+                        <label for="id" >Id</label>
+                        <textarea name="id" id="id"  class="form-control" ></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="titlu">Titlu</label>
+                        <textarea name="titlu" id="titlu" rows="2" class="form-control"></textarea>
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="destinatie">Destinatie</label>
+                        <input type="text" name="destinatie" id="destinatie" placeholder="destinatie" class="form-control"/>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="durata">Durata</label>
+                        <input type="number" name="durata" id="durata" placeholder="durata" class="form-control"/>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pret">Pret</label>
+                        <input type="number" name="pret" id="pret" placeholder="pret" class="form-control"/>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="link">Link</label>
+                        <input type="text" name="link" id="link" placeholder="link" class="form-control"/>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Anuleaza</button>
+                <button type="button" class="btn btn-primary" onclick="saveRecord()">Adauga</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- // Modal -->
+
+
+
+</body>
+</html>
